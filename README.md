@@ -8,5 +8,5 @@ Hosted by Dr. Kunal Ghosh of VSI.
 # Process:
 1. Install gedit: sudo apt install gedit.
 2. Create a C Code: (say, give the sum of all numbers from 1 to n).
-3. gcc that .c file; also some .a/a.out to check if the code is correct. 
+3. gcc that .c file; also some .a/a.out to check if the code is correct. (as in compile it to gates)
 4. Add a new architecture: RISC-V i.e. 
