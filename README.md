@@ -34,7 +34,11 @@ You can install any code editor, (preferably Visual Studio Code) and install the
 1. Change the the working directory to where OpenLane-related files are located. So,
    ```bash
    cd Desktop/work/tools/openlane_working_dir/openlane
-2. Open docker by typing in `docker` and then type in `./flow.tcl -interactive`. This essentially creates a container to run Openlane tools and opens a `flow.tcl` script. This script is written in tcl (pronounced 'tickle"), a high-level programming language.
+2. Open docker by typing in `docker` and then type in `./flow.tcl -interactive`. This essentially creates a container to run Openlane tools and opens a `flow.tcl` script. This script is written in tcl (pronounced 'tickle"), a high-level programming language. In interactive mode, OpenLane provides an interactive Tcl shell where the user can provide inputs.
+3. To load the OpenLane package ver. 0.9 so that it can used within the environment, type in `package require openlane 0.9`.
+4. To add a particular design to the chip, the `picorv32a`[^2] design, a CPU core that implements the RISC-V Instruction Set is used. This is done by running `prep -design picorv32a`.
+5. The design that has been created now has to be "placed", which involves arranging the standard cells (basically, `AND` and `OR` gate) on the chip layout. Placement is crucial for optimizing the design in terms of performance and area before the routing step. So, type in `run_placement`.
+5. 
 
 
 
@@ -94,3 +98,4 @@ You can install any code editor, (preferably Visual Studio Code) and install the
 
 # References:
 [^1]: VirtualBox: https://www.virtualbox.org/
+[^2]: Picorv32a Design: https://github.com/YosysHQ/picorv32
