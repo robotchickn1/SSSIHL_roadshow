@@ -1,7 +1,7 @@
 # RISC-V Roadshow
 
 
-The following was done as part of the **RISC-V and VLSI Chip Design Roadshow** held by the Department of Physics, Sri Sathya Sai Institute of Higher Learning, Prashanti Nilayam Campus. It was hosted by **Kunal Ghosh**, co-founder of VSD (VLSI System Design), along with **Nahusha K L** and **G R Vighneshwar**.
+The following was done as part of the **RISC-V and VLSI Chip Design Roadshow** held by the Department of Physics, [Sri Sathya Sai Institute of Higher Learning](https://www.sssihl.edu.in/), Prashanti Nilayam Campus. It was hosted by **Kunal Ghosh**, co-founder of [VSD (VLSI System Design)](https://www.vlsisystemdesign.com/), along with **Nahusha K L** and **G R Vighneshwar**.
 
 A brief overview of what is to be done is given below.
 
