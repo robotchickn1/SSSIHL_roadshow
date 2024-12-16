@@ -14,9 +14,11 @@ You can install any code editor, (preferably Visual Studio Code) and install the
 # Procedure:
 ## Part 1:
 1. Open Ubuntu with the vsdsquadron.vdi SATA.
-2. Open the terminal (by pressing `ctrl + alt + t` and type in `sudo apt install gedit ` to install gedit - a text editor for many Linux distributions. 
+2. Open the terminal (by pressing `ctrl + alt + t` and type the following to install gedit - a text editor for many Linux distributions.
+   ```bash
+   sudo apt install gedit
 3. Now, type `gedit` to create a new file. A program such as adding the sum of 'n' numbers can be written in this text file. A small note: Since, the program must run as quickly as possible, the code must be written in C language. This file can now be saved as a `.c` file, for ex. `sum.c`
-4. Since computers do not understand  `C`, the program code must now be compiled to 0s and 1s. This is done using `gcc`. So, 
+5. Since computers do not understand  `C`, the program code must now be compiled to 0s and 1s. This is done using `gcc`. So, 
 
 
 
