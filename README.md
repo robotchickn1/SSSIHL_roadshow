@@ -34,7 +34,7 @@ You can install any code editor, (preferably Visual Studio Code) and install the
 1. Change the the working directory to where OpenLane-related files are located. So,
    ```bash
    cd Desktop/work/tools/openlane_working_dir/openlane
-2. 
+2. Open docker by typing in `docker` and then type in `./flow.tcl -interactive`. This essentially creates a container to run Openlane tools and opens a `flow.tcl` script. This script is written in tcl (pronounced 'tickle"), a high-level programming language.
 
 
 
