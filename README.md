@@ -22,9 +22,11 @@ You can install any code editor, (preferably Visual Studio Code) and install the
 5. Type in `./a.out` to run the `a.out` file in the current directory and render the ouput in the terminal. The program can also be checked here to see if it is consistent.
 
 ## Using RISC-V Architecture
-1. The above code `sum.c` is now compiled for a 64-bit RISC-V architecture with the target architecture as `rv64i`, using the below instruction. The output will now be a file named `sum.o`.
+
+1. The code `sum.c` is now compiled for a 64-bit RISC-V architecture with the target architecture set to `rv64i`, using the following command. The output will be a file named `sum.o`:
    ```bash
    riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o sum.o sum.c
+
 2. The individual machine instructions, as in the RISC-V assembly instructions like `add`, `sub` etc., (in assembly language), along with their memory addresses, from `sum.c` can be seen in the terminal, using:
    ```bash
    riscv64-unknown-elf-objdump -d sum.o
