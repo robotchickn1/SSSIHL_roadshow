@@ -14,7 +14,7 @@ You can install any code editor, (preferably Visual Studio Code) and install the
 # Procedure:
 ## Part 1:
 1. Open Ubuntu with the vsdsquadron.vdi SATA mounted.
-2. Open the terminal (by pressing `ctrl + alt + t` and type the following to install gedit - a text editor for many Linux distributions.
+2. In the terminal (press `ctrl + alt + t`), type the following to install gedit - a text editor for many Linux distributions.
 ```
 sudo apt install gedit
 ```
