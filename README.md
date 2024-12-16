@@ -43,10 +43,17 @@ cd Desktop/work/tools/openlane_working_dir/openlane
 5. To add a particular design to the chip, the `picorv32a`[^2] design, a CPU core that implements the RISC-V Instruction Set is used. This is done by running `prep -design picorv32a`.
 6. The design that has been created now has to be "placed", which involves arranging the standard cells (basically, `AND` and `OR` gate) on the chip layout. Placement is crucial for optimizing the design in terms of performance and area before the routing step. So, type in `run_placement`.
 5. Similarly, synthesis and floorplan can also be run using `run_synthesis` and `run_floorplan` respectively. Synthesis translates the RTL (Register Transfer Level) code into a gate-level representation and `floorplan` optimizes the physical layout of the design. 
-6. The above lines create an output image file that can be viewed using `Eye of Gnome`: `eog designs/picorv32a/runs/<date>_<time>/results/floorplan/picorva32a.floorplan.def.png`. Note that `<date>_<time>` refer to the time when the above commands were run. 
-7. Now "placement" can be done to refine or adjust the initial placement after some changes or the above optimizations. So, type `run_placement`, whose output image can be viewed using `eog designs/picorv32a/runs/<date>_<time>/results/placement/picorva32a.placement.def.png`, where `<date>_<time>` have the above meaning.
-8. Every System we use has an in-built "clock" that times every process precisely. So, `run_cts` runs the Clock Tree Synthesis (CTS), which is responsible for creating the clock tree for the design. It optimizes for skew and latency.
-9. The next step: `run_routing` creates connections between the cells. Routing ensures that all the cells are properly connected and that the design meets specified requirements. 
+6. The above lines create an output image file that can be viewed using `Eye of Gnome`:
+```
+eog designs/picorv32a/runs/<date>_<time>/results/floorplan/picorva32a.floorplan.def.png
+```
+Note that `<date>_<time>` refer to the time when the above commands were run. 
+8. Now "placement" can be done to refine or adjust the initial placement after some changes or the above optimizations. So, type `run_placement`, whose output image can be viewed using:
+```
+eog designs/picorv32a/runs/<date>_<time>/results/placement/picorva32a.placement.def.png
+```
+9. Every System we use has an in-built "clock" that times every process precisely. So, `run_cts` runs the Clock Tree Synthesis (CTS), which is responsible for creating the clock tree for the design. It optimizes for skew and latency.
+10. The next step: `run_routing` creates connections between the cells. Routing ensures that all the cells are properly connected and that the design meets specified requirements. 
 
 
 
