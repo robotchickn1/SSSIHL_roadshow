@@ -16,7 +16,7 @@ You can install any code editor, (preferably Visual Studio Code) and install the
 1. Open Ubuntu with the vsdsquadron.vdi SATA mounted.
 2. Open the terminal (by pressing `ctrl + alt + t` and type the following to install gedit - a text editor for many Linux distributions.
 ```
-   sudo apt install gedit
+sudo apt install gedit
 ```
 4. Now, type `gedit` to create a new file. A program such as adding the sum of 'n' numbers can be written in this text file. **A small note** - since, the program must run as quickly and efficiently as possible, the code must be written in C language. This file can now be saved as a `.c` file, for example, say, `sum.c`.
 5. Now, the code can be compiled to 0s and 1s using `gcc`. So, type `gcc sum.c` to do so.
@@ -26,7 +26,7 @@ You can install any code editor, (preferably Visual Studio Code) and install the
 
 1. The code `sum.c` is now compiled for a 64-bit RISC-V architecture with the target architecture set to `rv64i`, using the following command. The output will be a file named `sum.o`:
 ```
-   riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o sum.o sum.c
+riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o sum.o sum.c
 ```
 2. The individual machine instructions, as in the RISC-V assembly instructions like `add`, `sub` etc., (in assembly language), along with their memory addresses, from `sum.c` can be seen in the terminal, using:
 ```
@@ -36,7 +36,7 @@ riscv64-unknown-elf-objdump -d sum.o
 ## Verilog Code to Gates:
 1. Change the the working directory to where OpenLane-related files are located. So,
 ```
-   cd Desktop/work/tools/openlane_working_dir/openlane
+cd Desktop/work/tools/openlane_working_dir/openlane
 ```
 3. Open docker by typing in `docker` and then type in `./flow.tcl -interactive`. This essentially creates a container to run Openlane tools and opens a `flow.tcl` script. This script is written in tcl (pronounced 'tickle"), a high-level programming language. In interactive mode, OpenLane provides an interactive Tcl shell where the user can provide inputs.
 4. To load the OpenLane package ver. 0.9 so that it can used within the environment, type in `package require openlane 0.9`.
