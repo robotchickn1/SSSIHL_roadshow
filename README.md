@@ -28,9 +28,13 @@ You can install any code editor, (preferably Visual Studio Code) and install the
 2. The individual machine instructions, as in the RISC-V assembly instructions like `add`, `sub` etc., (in assembly language), along with their memory addresses, from `sum.c` can be seen in the terminal, using:
    ```bash
    riscv64-unknown-elf-objdump -d sum.o
-3. 
 
 
+## Verilog Code to Gates:
+1. Change the the working directory to where OpenLane-related files are located. So,
+   ```bash
+   cd Desktop/work/tools/openlane_working_dir/openlane
+2. 
 
 
 
