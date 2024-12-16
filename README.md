@@ -9,7 +9,7 @@ A brief overview is given below.
 ## 1. VirtualBox and Linux OS
 You will need a Linux-based operating system for developing on RISC-V. If you're not already using Linux, you can set it up inside a VirtualBox VM on your current system.[^1]
 ## 2. Visual Studio Code with Platformio IDE installed
-You can install any code editor, (preferably Visual Studio Code) and install the Platform IDE Extension in the editor. 
+You can install any code editor, (preferably Visual Studio Code) and install the Platform IDE Extension in the editor.[^2]
 
 # Procedure:
 ## Part 1:
@@ -40,7 +40,7 @@ cd Desktop/work/tools/openlane_working_dir/openlane
 ```
 3. Open docker by typing in `docker` and then type in `./flow.tcl -interactive`. This essentially creates a container to run Openlane tools and opens a `flow.tcl` script. This script is written in tcl (pronounced 'tickle"), a high-level programming language. In interactive mode, OpenLane provides an interactive Tcl shell where the user can provide inputs.
 4. To load the OpenLane package ver. 0.9 so that it can used within the environment, type in `package require openlane 0.9`.
-5. To add a particular design to the chip, the `picorv32a`[^2] design, a CPU core that implements the RISC-V Instruction Set is used. This is done by running `prep -design picorv32a`.
+5. To add a particular design to the chip, the `picorv32a`[^3] design, a CPU core that implements the RISC-V Instruction Set is used. This is done by running `prep -design picorv32a`.
 6. The design that has been created now has to be "placed", which involves arranging the standard cells (basically, `AND` and `OR` gate) on the chip layout. Placement is crucial for optimizing the design in terms of performance and area before the routing step. So, type in `run_placement`.
 5. Similarly, synthesis and floorplan can also be run using `run_synthesis` and `run_floorplan` respectively. Synthesis translates the RTL (Register Transfer Level) code into a gate-level representation and `floorplan` optimizes the physical layout of the design. 
 6. The above lines create an output image file that can be viewed using `Eye of Gnome`:
@@ -111,4 +111,5 @@ eog designs/picorv32a/runs/<date>_<time>/results/placement/picorva32a.placement.
 
 # References:
 [^1]: VirtualBox: https://www.virtualbox.org/
-[^2]: Picorv32a Design: https://github.com/YosysHQ/picorv32
+[^2]: Platformio IDE: https://platformio.org/platformio-ide
+[^3]: Picorv32a Design: https://github.com/YosysHQ/picorv32
