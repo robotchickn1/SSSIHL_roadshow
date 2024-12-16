@@ -5,7 +5,7 @@ The following was done as part of the **RISC-V and VLSI Chip Design Roadshow** h
 
 A brief overview is given below.
 
-# Prerequisites:
+# Getting Started:
 ## 1. VirtualBox and Linux OS
 You will need a Linux-based operating system for developing on RISC-V. If you're not already using Linux, you can set it up inside a VirtualBox VM on your current system.[^1]
 ## 2. Visual Studio Code with Platformio IDE installed
