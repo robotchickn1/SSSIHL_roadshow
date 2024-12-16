@@ -13,7 +13,7 @@ You can install any code editor, (preferably Visual Studio Code) and install the
 
 # Procedure:
 ## Part 1:
-1. Open Ubuntu with the vsdsquadron.vdi SATA.
+1. Open Ubuntu with the vsdsquadron.vdi SATA mounted.
 2. Open the terminal (by pressing `ctrl + alt + t` and type the following to install gedit - a text editor for many Linux distributions.
 ```
    sudo apt install gedit
@@ -25,22 +25,23 @@ You can install any code editor, (preferably Visual Studio Code) and install the
 ## Using RISC-V Architecture
 
 1. The code `sum.c` is now compiled for a 64-bit RISC-V architecture with the target architecture set to `rv64i`, using the following command. The output will be a file named `sum.o`:
-   ```bash
+```
    riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o sum.o sum.c
-
+```
 2. The individual machine instructions, as in the RISC-V assembly instructions like `add`, `sub` etc., (in assembly language), along with their memory addresses, from `sum.c` can be seen in the terminal, using:
-   ```bash
-   riscv64-unknown-elf-objdump -d sum.o
-
+```
+riscv64-unknown-elf-objdump -d sum.o
+```
 
 ## Verilog Code to Gates:
 1. Change the the working directory to where OpenLane-related files are located. So,
-   ```bash
+```
    cd Desktop/work/tools/openlane_working_dir/openlane
-2. Open docker by typing in `docker` and then type in `./flow.tcl -interactive`. This essentially creates a container to run Openlane tools and opens a `flow.tcl` script. This script is written in tcl (pronounced 'tickle"), a high-level programming language. In interactive mode, OpenLane provides an interactive Tcl shell where the user can provide inputs.
-3. To load the OpenLane package ver. 0.9 so that it can used within the environment, type in `package require openlane 0.9`.
-4. To add a particular design to the chip, the `picorv32a`[^2] design, a CPU core that implements the RISC-V Instruction Set is used. This is done by running `prep -design picorv32a`.
-5. The design that has been created now has to be "placed", which involves arranging the standard cells (basically, `AND` and `OR` gate) on the chip layout. Placement is crucial for optimizing the design in terms of performance and area before the routing step. So, type in `run_placement`.
+```
+3. Open docker by typing in `docker` and then type in `./flow.tcl -interactive`. This essentially creates a container to run Openlane tools and opens a `flow.tcl` script. This script is written in tcl (pronounced 'tickle"), a high-level programming language. In interactive mode, OpenLane provides an interactive Tcl shell where the user can provide inputs.
+4. To load the OpenLane package ver. 0.9 so that it can used within the environment, type in `package require openlane 0.9`.
+5. To add a particular design to the chip, the `picorv32a`[^2] design, a CPU core that implements the RISC-V Instruction Set is used. This is done by running `prep -design picorv32a`.
+6. The design that has been created now has to be "placed", which involves arranging the standard cells (basically, `AND` and `OR` gate) on the chip layout. Placement is crucial for optimizing the design in terms of performance and area before the routing step. So, type in `run_placement`.
 5. Similarly, synthesis and floorplan can also be run using `run_synthesis` and `run_floorplan` respectively. Synthesis translates the RTL (Register Transfer Level) code into a gate-level representation and `floorplan` optimizes the physical layout of the design. 
 6. The above lines create an output image file that can be viewed using `Eye of Gnome`: `eog designs/picorv32a/runs/<date>_<time>/results/floorplan/picorva32a.floorplan.def.png`. Note that `<date>_<time>` refer to the time when the above commands were run. 
 7. Now "placement" can be done to refine or adjust the initial placement after some changes or the above optimizations. So, type `run_placement`, whose output image can be viewed using `eog designs/picorv32a/runs/<date>_<time>/results/placement/picorva32a.placement.def.png`, where `<date>_<time>` have the above meaning.
