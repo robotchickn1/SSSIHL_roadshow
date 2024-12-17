@@ -48,7 +48,10 @@ cd Desktop/work/tools/openlane_working_dir/openlane
 ![Docker](./images/7.%20docker.png)
 
 
-3. To load the OpenLane package ver. 0.9 so that it can used within the environment, type in `package require openlane 0.9`.
+3. To load the OpenLane package ver. 0.9 so that it can used within the environment, use
+```
+package require openlane 0.9
+```
 ![Interactive Shell](./images/8.%20tcl_interactive.png)
 
 
