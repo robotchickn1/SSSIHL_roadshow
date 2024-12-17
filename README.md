@@ -76,7 +76,7 @@ The above output also mentions the number of wires being used.
     ![Clock Tree Synthesis - Skew](./images/19.%20ctr_skew.png)
 The output of this line can be seen as below:
     ![Clock Tree Synthesis - Final Output](./images/20.%20ctr_output.png)
-11. The next step: `run_routing` creates connections between the cells. Routing ensures that all the cells are properly connected and that the design meets specified requirements. 
+11. The next step: `run_routing` creates connections between the cells and finalize the design. 
     ![Routing - Output](./images/21.%20routing_output1.png) 
     This step is somewhat of a computational process. So, the system takes time to provide the final output. Therefore, the computation takes place in steps of iterations. From 0th iteration..
     ![Routing - 0th Iteration](./images/22.%20Iteration_0.png)
