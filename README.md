@@ -18,12 +18,12 @@ You can install any code editor, (preferably Visual Studio Code) and install the
 ```
 sudo apt install gedit
 ```
-![Installing gedit](./images/1.%20install_gedit.png) <br><br>
+![Installing gedit](./images/1.%20install_gedit.png)
 4. Now, type `gedit` to create a new file. A program such as adding the sum of 'n' numbers can be written in this text file. **A small note** - since, the program must run as quickly and efficiently as possible, the code must be written in C language. This file can now be saved as a `.c` file, for example, say, `sum.c`.
-5. Now, the code is to be compiled to 0s and 1s using `gcc`. Therefore, type `gcc sum.c`.<br><br>
-![Compiling the Program](./images/2.%20gcc.png)<br><br>
-6. Type in `./a.out` to run the `a.out` file in the current directory and render the ouput in the terminal. The program can also be checked here to see if it is consistent.<br><br>
-![Program Output](./images/3.%20sum_output.png)<br><br>
+5. Now, the code is to be compiled to 0s and 1s using `gcc`. Therefore, type `gcc sum.c`.
+![Compiling the Program](./images/2.%20gcc.png)
+6. Type in `./a.out` to run the `a.out` file in the current directory and render the ouput in the terminal. The program can also be checked here to see if it is consistent.
+![Program Output](./images/3.%20sum_output.png)
 
 ## Using RISC-V Architecture:   
 
@@ -31,58 +31,57 @@ sudo apt install gedit
 ```
 riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o sum.o sum.c
 ```
-![Introducing RISC-V Architecture](./images/4.%20risc-v_architecture.png)<br><br>
+![Introducing RISC-V Architecture](./images/4.%20risc-v_architecture.png)
 2. The individual machine instructions, as in the RISC-V assembly instructions like `add`, `sub` etc., (in assembly language), along with their memory addresses, from `sum.c` can be seen in the terminal, using:
 ```
 riscv64-unknown-elf-objdump -d sum.o
 ```
-![The RISC-VInstruction Set](./images/5.%20objdump.png) <br><br>
+![The RISC-VInstruction Set](./images/5.%20objdump.png)
 
 ## Verilog Code to Gates:
 1. Change the the working directory to where Openlane-related files are located. So, use
 ```
 cd Desktop/work/tools/openlane_working_dir/openlane
 ```
-![Changing Directory](./images/6.%20change_dir.png) <br><br>
-
+![Changing Directory](./images/6.%20change_dir.png)
 2. Open docker by typing in `docker` and then type in `./flow.tcl -interactive`. This essentially creates a container to run Openlane tools and opens a `flow.tcl` script. This script is written in tcl (pronounced 'tickle"), a high-level programming language. In interactive mode, OpenLane provides an interactive Tcl shell where the user can provide an input.
-![Docker](./images/7.%20docker.png) <br><br>
+![Docker](./images/7.%20docker.png)
 
 
 3. To load the OpenLane package ver. 0.9 so that it can used within the environment, type in `package require openlane 0.9`.
-![Interactive Shell](./images/8.%20tcl_interactive.png) <br><br>
+![Interactive Shell](./images/8.%20tcl_interactive.png)
 
 
 4. To add a particular design to the chip, the `picorv32a`[^3] design, a CPU core that implements the RISC-V Instruction Set is used. This is done by running `prep -design picorv32a`.
-![Designing Output](./images/9.%20tcl_output.png) <br><br>
+![Designing Output](./images/9.%20tcl_output.png)
 
 5. Now, synthesis and floorplan can be run using `run_synthesis`. Synthesis translates the RTL (Register Transfer Level) code into a gate-level representation. At the end, it should read that "Synthesis was successful".
-![Synthesis Output](./images/10.%20synthesis_output.png) <br><br>
+![Synthesis Output](./images/10.%20synthesis_output.png)
 
 The above output also mentions the number of wires being used. 
-![Synthesis - No. of wires](./images/12.%20synthesis_output2.png) <br><br>
+![Synthesis - No. of wires](./images/12.%20synthesis_output2.png)
 
 6. Similarly, `run_floorplan` can be typed in to optimizes the physical layout of the design.
-![Floorplan Output](./images/14.%20floorplan_output.png) <br><br>
+![Floorplan Output](./images/14.%20floorplan_output.png)
 
 
 7. The above line create an output image file that can be viewed using `Eye of Gnome` (Note that `<date>_<time>` refer to the time when the above commands were run):
 ```
 eog designs/picorv32a/runs/<date>_<time>/results/floorplan/picorva32a.floorplan.def.png
 ```
-![Floorplan - Change Dir](./images/13.%20floorplan_code.png)<br><br>
-![Floorplan - Output Image](./images/14.%20floorplan_output.png)<br><br>
+![Floorplan - Change Dir](./images/13.%20floorplan_code.png)
+![Floorplan - Output Image](./images/14.%20floorplan_output.png)
 
 8. The design that has been created now has to be "placed", which involves arranging the standard cells (basically, `AND` and `OR` gate) on the chip layout. Placement is crucial for optimizing the design in terms of performance and area before the routing step. So, type in `run_placement`.
-![Placement Output](./images/16.%20placement_output.png) <br><br>
+![Placement Output](./images/16.%20placement_output.png)
 
 
 9. Similarly, `run_placement`'s output image can also be viewed using:
 ```
 eog designs/picorv32a/runs/<date>_<time>/results/placement/picorva32a.placement.def.png
 ```
-![Placement - Change Dir](./images/17.%20change_dir_placement.png) <br><br>
-![Placement - Output Image ](./images/18.%20placement.png) <br><br>
+![Placement - Change Dir](./images/17.%20change_dir_placement.png)
+![Placement - Output Image ](./images/18.%20placement.png)
 
 
 10. Every System we use has an in-built "clock" that times every process precisely. So, `run_cts` runs the Clock Tree Synthesis (CTS), which is responsible for creating the clock tree for the design. It optimizes for skew and latency.
