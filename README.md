@@ -15,7 +15,8 @@ You can install any code editor, (preferably Visual Studio Code) and install the
 ## Writing a Program:
 1. Open Ubuntu with the vsdsquadron.vdi SATA mounted.
 2. In the terminal (press `ctrl + alt + t`), type the following to install gedit - a text editor for many Linux distributions. 
-```sudo apt install gedit
+```
+sudo apt install gedit
 ```
 ![Installing gedit](./images/1.%20install_gedit.png)
 3. Now, type `gedit` to create a new file. A program such as adding the sum of 'n' numbers can be written in this text file. **A small note** - since, the program must run as quickly and efficiently as possible, the code must be written in C language. This file can now be saved as a `.c` file, for example, say, `sum.c`.
@@ -27,17 +28,20 @@ You can install any code editor, (preferably Visual Studio Code) and install the
 ## Using RISC-V Architecture:   
 
 1. The code `sum.c` is now compiled for a 64-bit RISC-V architecture with the target architecture set to `rv64i`, using the following command. The output will be a file named `sum.o`:
-```riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o sum.o sum.c
+```
+riscv64-unknown-elf-gcc -O1 -mabi=lp64 -march=rv64i -o sum.o sum.c
 ```
 ![Introducing RISC-V Architecture](./images/4.%20risc-v_architecture.png)
 2. The individual machine instructions, as in the RISC-V assembly instructions like `add`, `sub` etc., (in assembly language), along with their memory addresses, from `sum.c` can be seen in the terminal, using:
-```riscv64-unknown-elf-objdump -d sum.o
+```
+riscv64-unknown-elf-objdump -d sum.o
 ```
 ![The RISC-V Instruction Set](./images/5.%20objdump.png)
 
 ## Verilog Code to Gates:
 1. Change the the working directory to where Openlane-related files are located. So, use
-```cd Desktop/work/tools/openlane_working_dir/openlane
+```
+cd Desktop/work/tools/openlane_working_dir/openlane
 ```
 ![Changing Directory](./images/6.%20change_dir.png)
 
@@ -45,7 +49,8 @@ You can install any code editor, (preferably Visual Studio Code) and install the
 ![Docker](./images/7.%20docker.png)
 
 3. To load the OpenLane package ver. 0.9 so that it can used within the environment, use
-```package require openlane 0.9
+```
+package require openlane 0.9
 ```
 ![Interactive Shell](./images/8.%20tcl_interactive.png)
 
@@ -62,7 +67,8 @@ The above output also mentions the number of wires being used.
 ![Floorplan Output](./images/14.%20floorplan_output.png)
 
 7. The above line create an output image file that can be viewed using `Eye of Gnome` (Note that `<date>_<time>` refer to the time when the above commands were run):
-```eog designs/picorv32a/runs/<date>_<time>/results/floorplan/picorva32a.floorplan.def.png
+```
+eog designs/picorv32a/runs/<date>_<time>/results/floorplan/picorva32a.floorplan.def.png
 ```
 ![Floorplan - Change Dir](./images/13.%20floorplan_code.png) <br><br>
 ![Floorplan - Output Image](./images/14.%20floorplan_output.png)
@@ -71,7 +77,8 @@ The above output also mentions the number of wires being used.
 ![Placement Output](./images/16.%20placement_output.png)
 
 9. Similarly, `run_placement`'s output image can also be viewed using:
-```eog designs/picorv32a/runs/<date>_<time>/results/placement/picorva32a.placement.def.png
+```
+eog designs/picorv32a/runs/<date>_<time>/results/placement/picorva32a.placement.def.png
 ```
 ![Placement - Change Dir](./images/17.%20change_dir_placement.png)
 ![Placement - Output Image ](./images/18.%20placement.png)
