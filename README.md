@@ -15,10 +15,10 @@ You can install any code editor, (preferably Visual Studio Code) and install the
 ## Writing a Program:
 1. Open Ubuntu with the vsdsquadron.vdi SATA mounted.
 2. In the terminal (press `ctrl + alt + t`), type the following to install gedit - a text editor for many Linux distributions. 
-```
-sudo apt install gedit
-```
-![Installing gedit](./images/1.%20install_gedit.png)
+    ```
+    sudo apt install gedit
+    ```
+    ![Installing gedit](./images/1.%20install_gedit.png)
 3. Now, type `gedit` to create a new file. A program such as adding the sum of 'n' numbers can be written in this text file. **A small note** - since, the program must run as quickly and efficiently as possible, the code must be written in C language. This file can now be saved as a `.c` file, for example, say, `sum.c`.
 4. Now, the code is to be compiled to 0s and 1s using `gcc`. Therefore, type `gcc sum.c`. <br><br>
 ![Compiling the Program](./images/2.%20gcc.png)
