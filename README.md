@@ -1,6 +1,5 @@
 # RISC-V Roadshow
 
-
 The following was done as part of the **RISC-V and VLSI Chip Design Roadshow** held by the Department of Physics, [Sri Sathya Sai Institute of Higher Learning](https://www.sssihl.edu.in/), Prashanti Nilayam Campus. It was hosted by **Kunal Ghosh**, co-founder of [VSD (VLSI System Design)](https://www.vlsisystemdesign.com/), along with **Nahusha K L** and **G R Vighneshwar**.
 
 A brief overview is given below. After every step, a visual is displayed to guide the user.
@@ -79,9 +78,11 @@ The output of this line can be seen as below:
     ![Clock Tree Synthesis - Final Output](./images/20.%20ctr_output.png)
 11. The next step: `run_routing` creates connections between the cells. Routing ensures that all the cells are properly connected and that the design meets specified requirements. 
     ![Routing - Output](./images/21.%20routing_output1.png) 
-    This step is somewhat of a computational process. So, the system takes time to provide the final output. Therefore, the computation takes place in steps of iterations. From 0th iteration.. 57th Iteration.. so on..
+    This step is somewhat of a computational process. So, the system takes time to provide the final output. Therefore, the computation takes place in steps of iterations. From 0th iteration..
     ![Routing - 0th Iteration](./images/22.%20Iteration_0.png)
+    1st Iteration..
     ![Routing - 1th Iteration](./images/23.%20Iteration_1.png)
+    57th Iteration..
     ![Routing - 57th Iteration](./images/24.%20Iteration_57.png)
     Until, the final output arrives. 
     ![Routing - Final Output](./images/25.%20routing_done.png)
