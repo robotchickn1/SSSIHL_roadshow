@@ -85,14 +85,18 @@ eog designs/picorv32a/runs/<date>_<time>/results/placement/picorva32a.placement.
 
 10. Every System we use has an in-built "clock" that times every process precisely. So, `run_cts` runs the Clock Tree Synthesis (CTS), which is responsible for creating the clock tree for the design. It optimizes for skew and latency.
 ![Clock Tree Synthesis - Skew](./images/19.%20ctr_skew.png)
+
 The output of this line can be seen as below:
+
 ![Clock Tree Synthesis - Final Output](./images/20.%20ctr_output.png)
 
 11. The next step: `run_routing` creates connections between the cells. Routing ensures that all the cells are properly connected and that the design meets specified requirements. 
 ![Routing - Output](./images/21.%20routing_output1.png) 
 This step is somewhat of a computational process. So, the system takes time to provide the final output. Therefore, the computation takes place in steps of iterations. From 0th iteration.. 57th Iteration.. so on..
-![Routing - 0th Iteration](./images/22.%20Iteration_0.png) <br><br>
-![Routing - 1th Iteration](./images/23.%20Iteration_1.png) <br><br>
+![Routing - 0th Iteration](./images/22.%20Iteration_0.png)
+<br><br>
+![Routing - 1th Iteration](./images/23.%20Iteration_1.png)
+<br><br>
 ![Routing - 57th Iteration](./images/24.%20Iteration_57.png) <br><br>
 
 Until, the final output arrives. 
