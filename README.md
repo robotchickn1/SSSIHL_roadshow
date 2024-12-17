@@ -54,7 +54,6 @@ package require openlane 0.9
 ```
 ![Interactive Shell](./images/8.%20tcl_interactive.png)
 
-
 4. To add a particular design to the chip, the `picorv32a`[^3] design, a CPU core that implements the RISC-V Instruction Set is used. This is done by running `prep -design picorv32a`.
 ![Designing Output](./images/9.%20tcl_output.png)
 
@@ -64,7 +63,7 @@ package require openlane 0.9
 The above output also mentions the number of wires being used. 
 ![Synthesis - No. of wires](./images/12.%20synthesis_output2.png)
 
-6. Similarly, `run_floorplan` can be typed in to optimizes the physical layout of the design.
+6. Similarly, `run_floorplan` can be typed in to optimize the physical layout of the design.
 ![Floorplan Output](./images/14.%20floorplan_output.png)
 
 
@@ -72,7 +71,7 @@ The above output also mentions the number of wires being used.
 ```
 eog designs/picorv32a/runs/<date>_<time>/results/floorplan/picorva32a.floorplan.def.png
 ```
-![Floorplan - Change Dir](./images/13.%20floorplan_code.png)
+![Floorplan - Change Dir](./images/13.%20floorplan_code.png) <br><br>
 ![Floorplan - Output Image](./images/14.%20floorplan_output.png)
 
 8. The design that has been created now has to be "placed", which involves arranging the standard cells (basically, `AND` and `OR` gate) on the chip layout. Placement is crucial for optimizing the design in terms of performance and area before the routing step. So, type in `run_placement`.
@@ -88,9 +87,19 @@ eog designs/picorv32a/runs/<date>_<time>/results/placement/picorva32a.placement.
 
 
 10. Every System we use has an in-built "clock" that times every process precisely. So, `run_cts` runs the Clock Tree Synthesis (CTS), which is responsible for creating the clock tree for the design. It optimizes for skew and latency.
+![Clock Tree Synthesis - Skew](./images/19.%20ctr_skew.png)
+![Clock Tree Synthesis - Final Output](./images/20.%20ctr_output.png)
 
 
-11. The next step: `run_routing` creates connections between the cells. Routing ensures that all the cells are properly connected and that the design meets specified requirements. This step is somewhat of a computational process. So, the system takes time to provide the final output. 
+11. The next step: `run_routing` creates connections between the cells. Routing ensures that all the cells are properly connected and that the design meets specified requirements. 
+![Routing - Output](21.%20routing_output1.png) 
+This step is somewhat of a computational process. So, the system takes time to provide the final output. So, the computation takes place in steps of iterations. From 0th iteration.. so on..
+![Routing - 0th Iteration](./images/22.%20Iteration_0.png) <br><br>
+![Routing - 1th Iteration](./images/23.%20Iteration_1.png) <br><br>
+![Routing - 57th Iteration](./images/24.%20Iteration_57.png) <br><br>
+
+Until, the final output arrives. 
+![Routing - Final Output](./images/25.%20routing_done.png)
 
 
 
