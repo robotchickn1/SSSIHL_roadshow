@@ -34,29 +34,25 @@ riscv64-unknown-elf-objdump -d sum.o
 ```
 
 ## Verilog Code to Gates:
-1. Change the the working directory to where OpenLane-related files are located. So,
+1. Change the the working directory to where Openlane-related files are located. So,
 ```
 cd Desktop/work/tools/openlane_working_dir/openlane
 ```
-3. Open docker by typing in `docker` and then type in `./flow.tcl -interactive`. This essentially creates a container to run Openlane tools and opens a `flow.tcl` script. This script is written in tcl (pronounced 'tickle"), a high-level programming language. In interactive mode, OpenLane provides an interactive Tcl shell where the user can provide inputs.
-4. To load the OpenLane package ver. 0.9 so that it can used within the environment, type in `package require openlane 0.9`.
-5. To add a particular design to the chip, the `picorv32a`[^3] design, a CPU core that implements the RISC-V Instruction Set is used. This is done by running `prep -design picorv32a`.
-6. The design that has been created now has to be "placed", which involves arranging the standard cells (basically, `AND` and `OR` gate) on the chip layout. Placement is crucial for optimizing the design in terms of performance and area before the routing step. So, type in `run_placement`.
-5. Similarly, synthesis and floorplan can also be run using `run_synthesis` and `run_floorplan` respectively. Synthesis translates the RTL (Register Transfer Level) code into a gate-level representation and `floorplan` optimizes the physical layout of the design. 
-6. The above lines create an output image file that can be viewed using `Eye of Gnome`:
+2. Open docker by typing in `docker` and then type in `./flow.tcl -interactive`. This essentially creates a container to run Openlane tools and opens a `flow.tcl` script. This script is written in tcl (pronounced 'tickle"), a high-level programming language. In interactive mode, OpenLane provides an interactive Tcl shell where the user can provide an input.
+2. To load the OpenLane package ver. 0.9 so that it can used within the environment, type in `package require openlane 0.9`.
+4. To add a particular design to the chip, the `picorv32a`[^3] design, a CPU core that implements the RISC-V Instruction Set is used. This is done by running `prep -design picorv32a`.
+5. Now, synthesis and floorplan can be run using `run_synthesis` and `run_floorplan` respectively. Synthesis translates the RTL (Register Transfer Level) code into a gate-level representation and `floorplan` optimizes the physical layout of the design. 
+6. The above line create an output image file that can be viewed using `Eye of Gnome` (Note that `<date>_<time>` refer to the time when the above commands were run):
 ```
 eog designs/picorv32a/runs/<date>_<time>/results/floorplan/picorva32a.floorplan.def.png
 ```
-Note that `<date>_<time>` refer to the time when the above commands were run. 
-8. Now "placement" can be done to refine or adjust the initial placement after some changes or the above optimizations. So, type `run_placement`, whose output image can be viewed using:
+7. The design that has been created now has to be "placed", which involves arranging the standard cells (basically, `AND` and `OR` gate) on the chip layout. Placement is crucial for optimizing the design in terms of performance and area before the routing step. So, type in `run_placement`.
+8. Similarly, `run_placement`'s output image can also be viewed using:
 ```
 eog designs/picorv32a/runs/<date>_<time>/results/placement/picorva32a.placement.def.png
 ```
 9. Every System we use has an in-built "clock" that times every process precisely. So, `run_cts` runs the Clock Tree Synthesis (CTS), which is responsible for creating the clock tree for the design. It optimizes for skew and latency.
-10. The next step: `run_routing` creates connections between the cells. Routing ensures that all the cells are properly connected and that the design meets specified requirements. 
-
-
-
+10. The next step: `run_routing` creates connections between the cells. Routing ensures that all the cells are properly connected and that the design meets specified requirements. This step is somewhat of a computational process. So, the system takes time to provide the final output. 
 
 
 
