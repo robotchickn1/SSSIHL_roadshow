@@ -14,7 +14,7 @@ You can install any code editor, (preferably Visual Studio Code) and install the
 # Procedure:
 ## Code and Test:
 1. Open Ubuntu with the vsdsquadron.vdi SATA mounted.
-2. In the terminal (press `ctrl + alt + t`), type the following to install gedit - a text editor for many Linux distributions. <br><br>
+2. In the terminal (press `ctrl + alt + t`), type the following to install gedit - a text editor for many Linux distributions.
 ```
 sudo apt install gedit
 ```
@@ -44,7 +44,6 @@ riscv64-unknown-elf-objdump -d sum.o
 cd Desktop/work/tools/openlane_working_dir/openlane
 ```
 ![Changing Directory](./images/6.%20change_dir.png) <br><br>
-
 
 2. Open docker by typing in `docker` and then type in `./flow.tcl -interactive`. This essentially creates a container to run Openlane tools and opens a `flow.tcl` script. This script is written in tcl (pronounced 'tickle"), a high-level programming language. In interactive mode, OpenLane provides an interactive Tcl shell where the user can provide an input.
 ![Docker](./images/7.%20docker.png) <br><br>
