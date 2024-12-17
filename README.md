@@ -52,7 +52,7 @@ You can install any code editor, (preferably Visual Studio Code) and install the
     ![Interactive Shell](./images/8.%20tcl_interactive.png)
 4. To add a particular design to the chip, the `picorv32a`[^3] design, a CPU core that implements the RISC-V Instruction Set is used. This is done by running `prep -design picorv32a`. The output is shown below:
     ![Designing Output](./images/9.%20tcl_output.png)
-5. Now, synthesis and floorplan can be run using `run_synthesis`. Synthesis translates the RTL (Register Transfer Level) code into a gate-level representation. At the end, it should read that "Synthesis was successful".
+5. Now, synthesis and floorplan can be run using `run_synthesis`. Synthesis translates the RTL (Register Transfer Level) code into a gate-level representation. At the end, it should read "Synthesis was successful".
     ![Synthesis Output](./images/10.%20synthesis_output.png)
 The above output also mentions the number of wires being used. 
     ![Synthesis - No. of wires](./images/12.%20synthesis_output2.png)
